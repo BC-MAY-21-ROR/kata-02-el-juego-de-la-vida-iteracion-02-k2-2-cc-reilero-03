@@ -1,25 +1,34 @@
 class Matrix
-    def initialize(row = 0, columns = 0)
-        @row = row
-        @columns = columns
-    end
 
-    def row
-        @row
-    end
+    def initialize
 
-    def column
-        @column
     end
+    def create_grid(rows, columns)
 
+    @rows = rows
+    @columns = cols
+
+    grid = []
+
+        rows.times do |i|
+            row = []
+            grid.push (row)
     
+            cols.times do |j|
+                row.push (".")
+            end
+        end
 
-end
-
-class iniciar_juego < Matrix
-    def show_matrix
-        # mostrar matriz
-
+        for i in 0..rows-1
+            puts grid[i].join('')
+        end
     end
-    # todo el algoritmo
 end
+
+class Iniciar_Juego < Matrix
+    def show_matrix (rows, columns)
+        create_grid rows, columns
+    end
+end
+
+Iniciar_Juego.show_matrix 5, 5
