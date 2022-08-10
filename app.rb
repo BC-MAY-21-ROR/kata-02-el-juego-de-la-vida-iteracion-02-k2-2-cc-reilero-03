@@ -5,16 +5,13 @@ class Matrix
     end
     def create_grid(rows, columns)
 
-    @rows = rows
-    @columns = cols
-
     grid = []
 
         rows.times do |i|
             row = []
             grid.push (row)
     
-            cols.times do |j|
+            columns.times do |j|
                 row.push (".")
             end
         end
@@ -22,13 +19,19 @@ class Matrix
         for i in 0..rows-1
             puts grid[i].join('')
         end
+
     end
 end
 
-class Iniciar_Juego < Matrix
+class Iniciar < Matrix
     def show_matrix (rows, columns)
         create_grid rows, columns
     end
 end
 
-Iniciar_Juego.show_matrix 5, 5
+start_game = Iniciar.new
+start_game.show_matrix 5, 10
+
+# matrix = Iniciar.new
+
+# matrix.show_matrix
