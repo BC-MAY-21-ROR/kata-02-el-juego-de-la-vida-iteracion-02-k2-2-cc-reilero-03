@@ -8,41 +8,30 @@ class Matrix
     def create_grid
 
     grid = []
+    cells = ["*", "."]
 
         @rows.times do |i|
             row = []
             grid.push (row)
     
             @columns.times do |j|
-                row.push ("x")
+                row.push(cells[rand(2)])
             end
         end
 
-        # for i in 0..@rows-1
-        #     grid[i].join('')
-        # end
-
-    return grid
-
-    end
-end
-
-class Randomize < Matrix
-    def randomize_cells
-
-        cells = ["*", "."]
-
-        @rows.times do |i|
-            @columns.times do |j|
-                create_grid[i][j].map do 
-                    [i][j] = cells[rand(2)]
-                end
-            end
+        grid.each do |row|
+            puts row.join(' ')
         end
-
-        puts create_grid
     end
 end
 
-start_game = Randomize.new(5, 10)
-start_game.randomize_cells
+class Neighbours < Matrix
+
+    def live_cells
+        
+    end
+
+end
+
+start_game = Matrix.new(5, 10)
+start_game.create_grid
