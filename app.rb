@@ -23,15 +23,13 @@ class Matrix
             puts row.join(' ')
         end
     end
-end
 
-class Neighbours < Matrix
-
-    def live_cells
-        
+    def is_alive?
+        if @rows == "*"
+            puts "."
+        end
     end
-
 end
 
-start_game = Matrix.new(5, 10)
+start_game = Matrix.new(4, 8)
 start_game.create_grid
